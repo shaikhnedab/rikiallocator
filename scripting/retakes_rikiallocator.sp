@@ -149,29 +149,29 @@ public void OnPluginStart()
 	gc_iDeagleChance = AutoExecConfig_CreateConVar("mywa_chance_deagle", "5", "percent chance a round will be a deagle round (mywa_rounds_chance 0)", _, true, 0.0);
 
 	gc_iPistolRounds = AutoExecConfig_CreateConVar("mywa_rounds_pistol", "3", "how many round will be pistol round (mywa_rounds_chance 1)", _, true, 0.0);
-	gc_iForceRounds = AutoExecConfig_CreateConVar("mywa_rounds_force", "4", "how many round will be force round (mywa_rounds_chance 1)", _, true, 0.0);
+	gc_iForceRounds = AutoExecConfig_CreateConVar("mywa_rounds_force", "3", "how many round will be force round (mywa_rounds_chance 1)", _, true, 0.0);
 
 	gc_iFullMoney = AutoExecConfig_CreateConVar("mywa_money_full", "16000", "money for weapons and equipment on fullbuy round", _, true, 0.0);
 	gc_iPistolMoney = AutoExecConfig_CreateConVar("mywa_money_pistol", "800", "money for weapons and equipment on pistol round", _, true, 0.0);
 	gc_iForceMoney = AutoExecConfig_CreateConVar("mywa_money_force", "2700", "money for weapons and equipment on forcebuy round", _, true, 0.0);
 
-	gc_iAWP_MinT = AutoExecConfig_CreateConVar("mywa_awp_min_t", "3", "min number of player in terrorist team before AWP is available for T", _, true, 1.0);
+	gc_iAWP_MinT = AutoExecConfig_CreateConVar("mywa_awp_min_t", "2", "min number of player in terrorist team before AWP is available for T", _, true, 1.0);
 	gc_iScout_MinT = AutoExecConfig_CreateConVar("mywa_scout_min_t", "2", "min number of player in terrorist team before scout is available for T", _, true, 1.0);
 	gc_iAWP_T = AutoExecConfig_CreateConVar("mywa_awp_t", "1", "max number of AWPs for terrorist team / 0 - no AWPs", _, true, 0.0);
 	gc_iScout_T = AutoExecConfig_CreateConVar("mywa_scout_t", "1", "max number of scouts for terrorist team in force rounds/ 0 - no scouts", _, true, 0.0);
-	gc_iMolotov_T = AutoExecConfig_CreateConVar("mywa_molotov_t", "2", "max number of molotovs for terrorist team / 0 - no molotovs", _, true, 0.0);
-	gc_iSmoke_T = AutoExecConfig_CreateConVar("mywa_smoke_t", "2", "max number of smokegrenades for terrorist team / 0 - no smokegrenades", _, true, 0.0);
-	gc_iFlash_T = AutoExecConfig_CreateConVar("mywa_flash_t", "3", "max number of flashbangs for terrorist team / 0 - no flashbangs", _, true, 0.0);
-	gc_iHEgrenade_T = AutoExecConfig_CreateConVar("mywa_he_t", "3", "max number of HEgrenades for terrorist team / 0 - no HEgrenades", _, true, 0.0);
+	gc_iMolotov_T = AutoExecConfig_CreateConVar("mywa_molotov_t", "1", "max number of molotovs for terrorist team / 0 - no molotovs", _, true, 0.0);
+	gc_iSmoke_T = AutoExecConfig_CreateConVar("mywa_smoke_t", "1", "max number of smokegrenades for terrorist team / 0 - no smokegrenades", _, true, 0.0);
+	gc_iFlash_T = AutoExecConfig_CreateConVar("mywa_flash_t", "2", "max number of flashbangs for terrorist team / 0 - no flashbangs", _, true, 0.0);
+	gc_iHEgrenade_T = AutoExecConfig_CreateConVar("mywa_he_t", "1", "max number of HEgrenades for terrorist team / 0 - no HEgrenades", _, true, 0.0);
 
-	gc_iAWP_MinCT = AutoExecConfig_CreateConVar("mywa_awp_min_ct", "3", "min number of player in counter-terrorist team before AWP is available for CT", _, true, 1.0);
+	gc_iAWP_MinCT = AutoExecConfig_CreateConVar("mywa_awp_min_ct", "2", "min number of player in counter-terrorist team before AWP is available for CT", _, true, 1.0);
 	gc_iScout_MinCT = AutoExecConfig_CreateConVar("mywa_scout_min_ct", "2", "min number of player in counter-terrorist team before scout is available for CT", _, true, 1.0);
 	gc_iAWP_CT = AutoExecConfig_CreateConVar("mywa_awp_ct", "1", "max number of AWPs for counter-terrorist team / 0 - no AWPs", _, true, 0.0);
 	gc_iScout_CT = AutoExecConfig_CreateConVar("mywa_scout_ct", "1", "max number of scouts for counter-terrorist team in force rounds/ 0 - no scouts", _, true, 0.0);
-	gc_iMolotov_CT = AutoExecConfig_CreateConVar("mywa_molotov_ct", "2", "max number of molotovs for counter-terrorist team / 0 - no molotovs", _, true, 0.0);
+	gc_iMolotov_CT = AutoExecConfig_CreateConVar("mywa_molotov_ct", "1", "max number of molotovs for counter-terrorist team / 0 - no molotovs", _, true, 0.0);
 	gc_iSmoke_CT = AutoExecConfig_CreateConVar("mywa_smoke_ct", "2", "max number of smokegrenades for counter-terrorist team / 0 - no smokegrenades", _, true, 0.0);
-	gc_iFlash_CT = AutoExecConfig_CreateConVar("mywa_flash_ct", "3", "max number of flashbangs for counter-terrorist team / 0 - no flashbangs", _, true, 0.0);
-	gc_iHEgrenade_CT = AutoExecConfig_CreateConVar("mywa_he_ct", "3", "max number of HEgrenades for counter-terrorist team / 0 - no HEgrenades", _, true, 0.0);
+	gc_iFlash_CT = AutoExecConfig_CreateConVar("mywa_flash_ct", "2", "max number of flashbangs for counter-terrorist team / 0 - no flashbangs", _, true, 0.0);
+	gc_iHEgrenade_CT = AutoExecConfig_CreateConVar("mywa_he_ct", "1", "max number of HEgrenades for counter-terrorist team / 0 - no HEgrenades", _, true, 0.0);
 
 	gc_iOrder = AutoExecConfig_CreateConVar("mywa_buy_order", "0", "order to buy the equipments / 0 - random, 1 - 1st grenades 2nd armor & kit, 2 - 1st armor & kit 2nd grenades ", _, true, 0.0, true, 2.0);
 
@@ -682,17 +682,24 @@ void Menu_Primary(int client)
 	if (g_bIsCT[client])
 	{
 		Format(sBuffer, sizeof(sBuffer), "%t\n", "Rifle CT");
-		menu.AddItem("weapon_m4a1", "M4A4");
+		menu.AddItem("weapon_m4a1", "M4A1");
 		menu.AddItem("weapon_m4a1_silencer", "M4A1-S");
-		menu.AddItem("weapon_famas", "FAMAS");
+		menu.AddItem("weapon_ak47", "AK-47");
 		menu.AddItem("weapon_aug", "AUG");
+		menu.AddItem("weapon_sg556", "SG 553");
+		menu.AddItem("weapon_galilar", "Galil AR");
+		menu.AddItem("weapon_famas", "FAMAS");
 	}
 	else if (!g_bIsCT[client])
 	{
 		Format(sBuffer, sizeof(sBuffer), "%t\n", "Rifle T");
+		menu.AddItem("weapon_m4a1", "M4A1");
+		menu.AddItem("weapon_m4a1_silencer", "M4A1-S");
 		menu.AddItem("weapon_ak47", "AK-47");
-		menu.AddItem("weapon_galilar", "Galil AR");
+		menu.AddItem("weapon_aug", "AUG");
 		menu.AddItem("weapon_sg556", "SG 553");
+		menu.AddItem("weapon_galilar", "Galil AR");
+		menu.AddItem("weapon_famas", "FAMAS");
 	}
 
 	menu.SetTitle(sBuffer);
@@ -710,13 +717,19 @@ void Menu_Secondary(int client)
 	{
 		Format(sBuffer, sizeof(sBuffer), "%t\n", "Select a CT pistol");
 		menu.AddItem("weapon_usp_silencer", "USP-S");
+		menu.AddItem("weapon_glock", "Glock-18");
 		menu.AddItem("weapon_hkp2000", "P2000");
 		menu.AddItem("weapon_fiveseven", "Five-SeveN");
+		menu.AddItem("weapon_tec9", "Tec-9");
+		menu.AddItem("weapon_elite", "Dual Berettas");
 	}
 	else if (!g_bIsCT[client])
 	{
 		Format(sBuffer, sizeof(sBuffer), "%t\n", "Select a T pistol");
+		menu.AddItem("weapon_usp_silencer", "USP-S");
 		menu.AddItem("weapon_glock", "Glock-18");
+		menu.AddItem("weapon_hkp2000", "P2000");
+		menu.AddItem("weapon_fiveseven", "Five-SeveN");
 		menu.AddItem("weapon_tec9", "Tec-9");
 		menu.AddItem("weapon_elite", "Dual Berettas");
 	}
@@ -750,6 +763,7 @@ void Menu_SMG(int client)
 	menu.AddItem("weapon_p90", "P90");
 	menu.AddItem("weapon_mp7", "MP7");
 	menu.AddItem("weapon_mp5sd", "MP5-SD");
+	menu.AddItem("weapon_deagle", "Desert Eagle");
 
 	if (g_bIsCT[client])
 	{
@@ -1149,22 +1163,9 @@ void EquipWeapons(int client)
 
 		if (GetClientTeam(client) == CS_TEAM_CT)
 		{
-			int iRandom = GetRandomInt(1, 5);
-			if (iRandom == 1 || iRandom==2 && (GetUserFlagBits(client) & ADMFLAG_CUSTOM6) && g_bScout[client] && gc_iScout_MinCT.IntValue <= GetPlayerCount(true, CS_TEAM_CT))
-			{
-				if (g_iScout_CT < gc_iScout_CT.IntValue)
-				{
-					GivePlayerItem(client, "weapon_ssg08");
-					iMoney -= GetWeaponPrice("weapon_ssg08");
-					g_iScout_CT++;
-				}
-				else
-				{
-					GivePlayerItem(client, g_sSMG_CT[client]);
-					iMoney -= GetWeaponPrice(g_sSMG_CT[client]);
-				}
-			}
-			else if(iRandom == 3 && g_bScout[client] && gc_iScout_MinCT.IntValue <= GetPlayerCount(true, CS_TEAM_CT))
+
+			int iRandom = GetRandomInt(1, 3);
+			if (iRandom == 1 || iRandom==2 && g_bScout[client] && gc_iScout_MinCT.IntValue <= GetPlayerCount(true, CS_TEAM_CT))
 			{
 				if (g_iScout_CT < gc_iScout_CT.IntValue)
 				{
@@ -1184,33 +1185,20 @@ void EquipWeapons(int client)
 				iMoney -= GetWeaponPrice(g_sSMG_CT[client]);
 			}
 
-			if (StrEqual(g_sSecondary_CT[client], "weapon_hkp2000"))
+			if (StrEqual(g_sSecondary_CT[client], "weapon_hkp2000")&&!StrEqual(g_sSMG_CT[client], "weapon_deagle") || ((iRandom == 1 || iRandom==2 && g_bAWP[client] && gc_iScout_MinCT.IntValue <= GetPlayerCount(true, CS_TEAM_CT)) && (g_iScout_CT-1) < gc_iScout_CT.IntValue))
 			{
 				GivePlayerItem(client, "weapon_hkp2000");
 			}
-			else
+			else if (!StrEqual(g_sSMG_CT[client], "weapon_deagle") || ((iRandom == 1 || iRandom==2 && g_bAWP[client] && gc_iScout_MinCT.IntValue <= GetPlayerCount(true, CS_TEAM_CT)) && (g_iScout_CT-1) < gc_iScout_CT.IntValue))
 			{
 				GivePlayerItem(client, "weapon_usp_silencer");
 			}
 		}
 		else if (GetClientTeam(client) == CS_TEAM_T)
 		{
-			int iRandom = GetRandomInt(1, 5);
-			if (iRandom == 1 || iRandom==2 && (GetUserFlagBits(client) & ADMFLAG_CUSTOM6) && g_bScout[client] && gc_iScout_MinT.IntValue <= GetPlayerCount(true, CS_TEAM_T))
-			{
-				if (g_iScout_T < gc_iScout_T.IntValue)
-				{
-					GivePlayerItem(client, "weapon_ssg08");
-					iMoney -= GetWeaponPrice("weapon_ssg08");
-					g_iScout_T++;
-				}
-				else
-				{
-					GivePlayerItem(client, g_sSMG_T[client]);
-					iMoney -= GetWeaponPrice(g_sSMG_T[client]);
-				}
-			}
-			else if (iRandom == 3 && g_bScout[client] && gc_iScout_MinT.IntValue <= GetPlayerCount(true, CS_TEAM_T))
+
+			int iRandom = GetRandomInt(1, 3);
+			if (iRandom == 1 || iRandom==2 && g_bScout[client] && gc_iScout_MinT.IntValue <= GetPlayerCount(true, CS_TEAM_T))
 			{
 				if (g_iScout_T < gc_iScout_T.IntValue)
 				{
@@ -1229,8 +1217,10 @@ void EquipWeapons(int client)
 				GivePlayerItem(client, g_sSMG_T[client]);
 				iMoney -= GetWeaponPrice(g_sSMG_T[client]);
 			}
-
-			GivePlayerItem(client, "weapon_glock");
+			if (!StrEqual(g_sSMG_T[client], "weapon_deagle") || ((iRandom == 1 || iRandom==2 && g_bAWP[client] && gc_iScout_MinT.IntValue <= GetPlayerCount(true, CS_TEAM_T)) && (g_iScout_T-1) < gc_iScout_T.IntValue))
+            {
+        GivePlayerItem(client, "weapon_glock");
+            }
 		}
 	}
 	else if (g_iRoundType == DEAGLE_ROUND)
